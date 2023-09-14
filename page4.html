@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>My Branding Page</title>
+        <!--Embeded stye method-->
+        <style>
+            header{
+                background:url(images/hanged.png)0 -200px no-repeat;/*places image as background*/
+                height: 400px;/*sets the header height*/
+                /*background-position 0 -200px */
+                /*background-repeat; no-repeat*/
+                padding-top: 100px;
+                padding-left: 100px;
+                font-weight: bold;
+                font-family: Arial, Helvetica, sans-serif;
+
+            }
+            li{
+list-style-type: none;
+display: inline;
+padding: 0 20px;
+
+            }
+            li a{
+text-decoration: none; /*remove underline*/
+
+            }
+            li a:link {
+                color: black; /*before click*/
+            }
+            li a:visited{
+                color: #818db3; /* after click*/
+            }
+            li a:hover{
+                color: #333;/*mouse over*/
+            }
+            li a:active{
+                color: orange;
+            }
+            nav{
+                background-color: rgb(rgb(255, 204, 0), rgb(64, 205, 64), rgb(43, 111, 228));
+            }
+            main h1 {
+                color: rgb(129,141,179);
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            footer{
+                height: 40px;
+                background-color: aqua;
+                text-align: center;
+                padding-top: 20px;
+                color: aquamarine;
+
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Contianer is to wrap everything -->
+        <div id="container">
+            <!-- Website Brand-->
+<header style="font-size: 60px;color: black;">My web page brand</header>
+<!-- Main Navigation -->
+<nav>
+    <ul>
+        <li><a href="index.htm]">Home</a></li> 
+        <li><a href="page2.html">About Us</a></li> 
+        <li><a href="page3.htm]">Contact Us</a></li>
+        <li>Gallery</li>
+    </ul>
+</nav>
+<!-- Main Content -->
+<main>
+<h1>My First Heading</h1>
+<h2>My Second Heading</h2>
+<P>Thi is my first <b>paragraph</b> of<em>information</em>.<a href="https://www.westcliff.edu">Click to go to the university.</a></P>
+<p style="text-align:centr;color:blue">This is the second line of text.</p>
+<ul id="album">
+ <!--   <li id="photo"><img src="images/winterland1.jpg"></li>
+    <li id="photo"><img src="images/winterland2.jpg"></li>
+    <li id="photo"><img src="images/winterland3.jpg"></li>
+    <li id="photo"><img src="images/winterland4.jpg"></li>
+    <li id="photo"><img src="images/winterland5.jpg"></li>
+    <li id="photo"><img src="images/winterland6.jpg"></li>
+    -->
+
+</ul>
+</main>
+<!-- Footer -->
+<footer>&copy; Copyright 2023</footer>
+        </div>
+        <script>
+            var photos = []; //declaring an empty arrary to store image element
+            var filenames = []; //declaring an empty element to store image filename
+            var imagelist = []; //declaring an empty array to store html list that contains image
+            var image = []; // declaring empty variable store the assembled image list codes
+            var openlist = "<li id='photo'>"; //Declare a variable to contain the open list tag 
+            var closeList = "</li>"; //Declare a variable to contain the close list tag
+            //Create a loop to create 6 images staring with index of 0
+            for (var i = 0; i < 6; i++){
+                filenames.push("winterland"+(i+1));//create image filename and store in the array
+photos.push("<img src='images/"+filenames[i]+".jpg'>") //assembling the filename into a large element
+image = openlist + photos[i] + closelist; //assemble image from previous arrays
+imagelist.push(image);//store image element code into an array
+            }
+          //Display all six images
+          document.getElementById("album").innerHTML = imagelist; 
+        </script>
+        <!-- End Container -->
+    </body>
+</html>
